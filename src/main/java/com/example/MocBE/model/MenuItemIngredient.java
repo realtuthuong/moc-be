@@ -1,0 +1,43 @@
+package com.example.MocBE.model;
+
+import jakarta.persistence.*;
+import jakarta.persistence.Table;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.UuidGenerator;
+import org.hibernate.type.SqlTypes;
+
+
+import java.math.BigDecimal;
+import java.util.UUID;
+
+@Data
+@Entity
+@Table(name = "menu_item_ingredient")
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class MenuItemIngredient {
+
+    @Id
+    @GeneratedValue
+    @UuidGenerator
+    @JdbcTypeCode(SqlTypes.CHAR)
+    @Column(columnDefinition = "CHAR(36)", updatable = false, nullable = false)
+    UUID id;
+
+    @Column(nullable = false, precision = 10, scale = 0)
+    BigDecimal quantity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "menu_item_id", nullable = false)
+    MenuItem menuItem;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ingredient_id", nullable = false)
+    Ingredient ingredient;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id", nullable = false)
+    Location location;
+}
