@@ -127,18 +127,19 @@ MOC Restaurant Management System là một hệ thống backend RESTful API đư
 
 ## 📁 Cấu trúc dự án
 src/main/java/com/example/MocBE/
-├── config/ # Cấu hình (Security, Redis, Kafka, etc.)
-├── controller/ # REST Controllers
-├── dto/ # Data Transfer Objects
-│ ├── request/ # Request DTOs
-│ └── response/ # Response DTOs
-├── enums/ # Enumerations
-├── exception/ # Exception handlers
-├── mapper/ # Object mappers
-├── model/ # Entity models
-├── repository/ # Data access layer
-│ └── spec/ # JPA Specifications
-├── security/ # Security configurations
-├── service/ # Business logic layer
-│ └── imp/ # Service implementations
-└── util/ # Utility classes
+├── config/        # Cấu hình (Security, Redis, Kafka, etc.)
+├── controller/    # REST Controllers
+├── dto/           # Data Transfer Objects
+│   ├── request/   # Request DTOs
+│   └── response/  # Response DTOs
+├── enums/         # Enumerations
+├── exception/     # Exception handlers
+├── mapper/        # Object mappers
+├── model/         # Entity models
+├── repository/    # Data access layer
+│   └── spec/      # JPA Specifications
+├── security/      # Security configurations
+├── service/       # Business logic layer
+│   └── imp/       # Service implementations
+└── util/          # Utility classes
+
